@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import Login from "./components/Login";
 import BubblePage from './components/BubblePage'
+// import { fetchBubbles } from './utils/fetchBubbles'
 import "./styles.scss";
 import PrivateRoute from './components/PrivateRoute'
 
@@ -19,6 +20,10 @@ function App() {
           display BubblePage when you're authenticated 
         */}
         <PrivateRoute path='/bubble-page' component={BubblePage} />
+        {/* <PrivateRoute path='/bubble-page' render={() => (
+          <BubblePage fetchBubbles={fetchBubbles} /> */}
+        {/* )} /> */}
+
       </div>
     </Router>
   );

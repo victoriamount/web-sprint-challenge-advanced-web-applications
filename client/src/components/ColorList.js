@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { useHistory } from 'react-router-dom'
 
 import { axiosWithAuth } from '../utils/axiosWithAuth'
 
@@ -13,7 +11,6 @@ const ColorList = ({ colors, updateColors }) => {
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
 
-  const history = useHistory()
 
   const editColor = color => {
     setEditing(true);
@@ -63,6 +60,7 @@ const ColorList = ({ colors, updateColors }) => {
               {color.color}
             </span>
             <div
+              data-testid='colorSample'
               className="color-box"
               style={{ backgroundColor: color.code.hex }}
             />
